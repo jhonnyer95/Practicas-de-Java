@@ -1,0 +1,31 @@
+package CalculadoraEstandar;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class CalculadoraEstandar extends JFrame implements ActionListener {
+	
+	JPanel base = (JPanel) this.getContentPane();
+	
+	//Metodo constructor donde le doy propiedades del formulario de la calculadora
+	public CalculadoraEstandar() {
+		
+		base.setLayout(null);	//
+		setSize(300,400);
+		setTitle("Calculadora de Jhonny"); //El titulo de la calculadora
+		setVisible(true);
+		
+	}
+	
+	public static void main(String[]args) {
+		new CalculadoraEstandar();
+		
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

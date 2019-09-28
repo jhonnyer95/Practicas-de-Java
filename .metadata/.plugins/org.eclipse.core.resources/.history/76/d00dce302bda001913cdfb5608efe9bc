@@ -1,0 +1,300 @@
+package CalculadoraEstandar;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class CalculadoraEstandar extends JFrame implements ActionListener {
+	
+	//Se crea la ventana
+	JPanel base = (JPanel) this.getContentPane();
+	
+	//Se crea la pantalla Textfield
+	JTextField pantalla = new JTextField();
+	
+	//Los botones
+	JButton btnUno = new JButton("1");
+	JButton btnDos = new JButton("2");
+	JButton btnTres = new JButton("3");
+	JButton btnBorrar = new JButton("Borrar");
+	
+	JButton btnCuatro = new JButton("4");
+	JButton btnCinco = new JButton("5");
+	JButton btnSeis = new JButton("6");
+	JButton btnMas = new JButton("+");
+	
+	JButton btnSiete = new JButton("7");
+	JButton btnOcho = new JButton("8");
+	JButton btnNueve = new JButton("9");
+	JButton btnMenos = new JButton("-");
+	
+	JButton btnPor = new JButton("*");
+	JButton btnCero = new JButton("0");
+	JButton btnDiv = new JButton("/");
+	JButton btnPunto = new JButton(".");
+	
+	JButton btnIgual = new JButton("=");
+	
+	
+	//Metodo constructor donde le doy propiedades del formulario de la calculadora
+	public CalculadoraEstandar() {
+		base.setLayout(null);	//null para acomodar manualmente los elementos
+		setSize(350,450);		
+		setTitle("Jhonny Calculador"); //El titulo de la calculadora
+		setVisible(true);	
+		
+		//Propiedades de pantalla
+		pantalla.setBounds(22, 8, 288, 70);
+		pantalla.setFont(new Font("tahoma", Font.BOLD, 25));
+		add(pantalla);
+		
+		//Propiedades Botones
+		btnUno.setBounds(22, 83, 60, 60);
+		btnUno.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnUno);
+		btnUno.addActionListener(this);
+		
+		btnDos.setBounds(87, 83, 60, 60);
+		btnDos.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnDos);
+		btnDos.addActionListener(this);
+		
+		
+		btnTres.setBounds(152, 83, 60, 60);
+		btnTres.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnTres);
+		btnTres.addActionListener(this);
+		
+		btnBorrar.setBounds(217, 83, 92, 60);
+		btnBorrar.setFont(new Font("Cabeza", Font.BOLD,13));
+		add(btnBorrar);
+		btnBorrar.addActionListener(this);
+		
+		btnCuatro.setBounds(22, 148, 60, 60);
+		btnCuatro.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnCuatro);
+		btnCuatro.addActionListener(this);
+		
+		btnCinco.setBounds(87, 148, 60, 60);
+		btnCinco.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnCinco);
+		btnCinco.addActionListener(this);
+		
+		btnSeis.setBounds(152, 148, 60, 60);
+		btnSeis.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnSeis);
+		btnSeis.addActionListener(this);
+		
+		btnMas.setBounds(217, 148, 92, 60);
+		btnMas.setFont(new Font("Cabeza", Font.BOLD,13));
+		add(btnMas);
+		btnMas.addActionListener(this);
+		
+		btnSiete.setBounds(22, 213, 60, 60);
+		btnSiete.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnSiete);
+		btnSiete.addActionListener(this);
+		
+		btnOcho.setBounds(87, 213, 60, 60);
+		btnOcho.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnOcho);
+		btnOcho.addActionListener(this);
+		
+		btnNueve.setBounds(152, 213, 60, 60);
+		btnNueve.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnNueve);
+		btnNueve.addActionListener(this);
+		
+		btnMenos.setBounds(217, 213, 92, 60);
+		btnMenos.setFont(new Font("Cabeza", Font.BOLD,13));
+		add(btnMenos);
+		btnMenos.addActionListener(this);
+		
+		btnPor.setBounds(22, 278, 60, 60);
+		btnPor.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnPor);
+		btnPor.addActionListener(this);
+		
+		btnCero.setBounds(87, 278, 60, 60);
+		btnCero.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnCero);
+		btnCero.addActionListener(this);
+		
+		btnDiv.setBounds(152, 278, 60, 60);
+		btnDiv.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnDiv);
+		btnDiv.addActionListener(this);
+		
+		btnPunto.setBounds(217, 278, 92, 60);
+		btnPunto.setFont(new Font("Cabeza", Font.BOLD,20));
+		add(btnPunto);
+		btnPunto.addActionListener(this);
+		
+		btnIgual.setBounds(22, 343, 288, 60);
+		btnIgual.setFont(new Font("Cabeza", Font.BOLD,13));
+		add(btnIgual);
+		btnIgual.addActionListener(this);
+	}
+	
+	
+	
+	public static void main(String[]args) {
+		new CalculadoraEstandar();
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == btnUno) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("1");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "1");
+			}
+			
+		}
+		
+		if(e.getSource() == btnDos) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("2");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "2");
+			}
+			
+		}
+		
+		if(e.getSource() == btnTres) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("3");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "3");
+			}
+			
+		}
+		
+		if(e.getSource() == btnCuatro) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("4");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "4");
+			}
+			
+		}
+		
+		if(e.getSource() == btnCinco) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("5");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "5");
+			}
+			
+		}
+		
+		if(e.getSource() == btnSeis) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("6");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "6");
+			}
+			
+		}
+		
+		if(e.getSource() == btnSiete) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("7");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "7");
+			}
+			
+		}
+		
+		if(e.getSource() == btnOcho) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("8");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "8");
+			}
+			
+		}
+		
+		if(e.getSource() == btnNueve) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("9");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "9");
+			}
+			
+		}
+		
+		if(e.getSource() == btnCero) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("0");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "0");
+			}
+			
+		}
+		
+		if(e.getSource() == btnMas) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("+");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "+");
+			}
+			
+		}
+		
+		if(e.getSource() == btnMenos) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("-");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "-");
+			}
+			
+		}
+		
+		if(e.getSource() == btnPor) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("*");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "*");
+			}
+			
+		}
+		
+		if(e.getSource() == btnDiv) {
+			if(pantalla.getText()=="") {
+				pantalla.setText("/");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + "/");
+			}
+			
+		}
+		
+		if(e.getSource() == btnPunto) {
+			if(pantalla.getText()=="") {
+				pantalla.setText(".");
+			}
+			else {
+				pantalla.setText(pantalla.getText() + ".");
+			}
+			
+		}
+		
+	}
+
+}
